@@ -222,4 +222,67 @@ I want to share my data through api and I updata url in Django mynote urls.py
 This urls shown like bolow.
 ![Alt text](image-23.png)
 
-Now I write some basic code in react project which you can see in my commit 
+Now I write some basic code in react project which you can see in my commit throw link
+
+- <https://github.com/MdImranHosen1/Django-React-Notes-App/tree/821e7d99c0cde8ddad9ffa3860c53863a7e41dab>
+  
+Now I wnat to fetch data from backend to the frontend using the url which I created.
+
+```
+http://127.0.0.1:8000/api/notes/
+```
+Let's see how
+```js
+import React, { useEffect, useState } from 'react'
+
+const NoteListPage = () => {
+    let [notes, setNotes]=useState([]);
+
+    useEffect(() => {
+      getNotes()
+      
+    }, [])
+
+    let getNotes = async()=>{
+        let response =await fetch('http://127.0.0.1:8000/api/notes/')
+        let data =await response.json()
+        console.log("data: ",data)
+        setNotes(data)
+    }
+    return (
+        <div>NoteListPage</div>
+    )
+}
+export default NoteListPage
+```
+Here getNotes get data from backend. This is promise function. 
+
+- useEffect is run in 4 stage. You can learn in online.
+
+After that we will get error. Becouse the react can't access the django api without django permission.
+
+
+Now we will give permission to react using install a package
+which name is django cors headers
+```
+https://pypi.org/project/django-cors-headers/
+```
+
+- Now cut the env folder to "Django + React Notes App" 
+- active the virtual enviroment
+- pip install django-cors-headers
+- Cut the env to mynotes folder.
+
+Please read the upper link article.
+
+- Now add settings.py
+- Installed_apps->"corsheaders",
+- MIDDLEWARE->"corsheaders.middleware.CorsMiddleware",
+
+
+
+Now which url api we want to give access?
+
+We can fix it. Which writen in the upper link how it's work.
+
+![Alt text](image-25.png)
