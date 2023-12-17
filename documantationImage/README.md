@@ -194,7 +194,13 @@ Now I want to get one specific note using id.
 ![Alt text](image-17.png)
 
 And add to urls as always
+
 ![Alt text](image-19.png)
 
 Now see the output
+
 ![Alt text](image-20.png)
+
+# Front end - React JS
+
+Now I will work with frontend.
