@@ -204,3 +204,22 @@ Now see the output
 # Front end - React JS
 
 Now I will work with frontend.
+
+First install react and start
+
+- npx create-react-app frontend
+- npm start
+  
+Delete some unused file. And create 2 folder
+
+1. components
+2. pages
+![Alt text](image-21.png)
+
+I want to share my data through api and I updata url in Django mynote urls.py
+![Alt text](image-22.png)
+
+This urls shown like bolow.
+![Alt text](image-23.png)
+
+Now I write some basic code in react project which you can see in my commit 
