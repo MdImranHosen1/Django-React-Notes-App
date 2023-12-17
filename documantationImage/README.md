@@ -116,3 +116,85 @@ This commend will create user for access admin panel.
 ![Alt text](image-8.png)
 
 Aftet that table will be created in database. In admin we can see. But if we want to edit that then we have to follow 2 commned in database section. After that we can edit that.
+
+- python manage.py migrate
+- python manage.py makemigrations
+
+## Adding Django REST Freamework
+
+Django REST Framework (DRF) is a widely-used, full-featured API framework designed for building RESTful APIs with Django.
+
+- Move env folder to the "Django + React Notes App"
+- Active virtual enviroment
+- Install Django REST Freamework
+- <https://www.django-rest-framework.org/>
+  
+```py
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+]
+```
+
+- Don't forget to add this line
+- And move the env folder to the mynote folder
+
+Lest use this
+
+In the view.py of api we use this remove Jsonresponse
+
+![Alt text](image-9.png)
+
+After that run project then see the changes.
+
+Here api view means which operation we want to execute. like GET,SET,POST.
+
+### Fetch data from admin database
+
+We use REST framework for this.
+
+Lets cheack it work or not. Build a temporary getNotes function.
+![Alt text](image-10.png)
+
+Add to url.
+
+![Alt text](image-11.png)
+
+check the output.
+![Alt text](image-12.png)
+
+Yes it's work.
+
+Let's add data to the database and query the data.
+![Alt text](image-13.png)
+
+Lets query those data from database.
+
+![Alt text](image-14.png)
+
+But here has a problem. The notes data are object. Now we can't sent object data to Response.
+
+Now we have to serializer those data.
+
+For serializer data we create a new file called serializers.py in api folder. Now create serializer for Note model.
+
+![Alt text](image-15.png)
+
+Now use this serializers.py for serializer object.
+![Alt text](image-16.png)
+
+1. we import the serializer
+2. Then use this
+3. many means many data can be serialize.(True or false)
+4. serializer is model
+5. Sent the data of this model we need to use .data after veriable.
+
+Now I want to get one specific note using id.
+
+![Alt text](image-17.png)
+
+And add to urls as always
+![Alt text](image-19.png)
+
+Now see the output
+![Alt text](image-20.png)
