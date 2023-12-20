@@ -296,3 +296,10 @@ response link copy and create proxy in package.json
 ![Alt text](image-27.png)
 
 Now install react router dom
+
+## After build and connect backend and frontend 
+
+- copy frontend to mynotes app
+- Inside the frontend folder run in console
+- npm run build
+

@@ -1,13 +1,13 @@
 import "./App.css";
 import Header from "./components/Header";
 import NoteListPage from "./pages/NoteListPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { NotePage } from "./pages/NotePage";
 
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div className="container dark">
                 <div className="app">
                     <Header />
@@ -20,7 +20,7 @@ function App() {
 
                 </div>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
